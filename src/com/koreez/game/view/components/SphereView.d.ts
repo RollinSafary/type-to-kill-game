@@ -1,0 +1,31 @@
+import { GameObjects } from 'phaser';
+export default class SphereView extends GameObjects.Sprite {
+    private startX;
+    private endX;
+    private startY;
+    private endY;
+    private value;
+    private text;
+    private moveEnabled;
+    private xMultiplier;
+    private yMultiplier;
+    private xSpeed;
+    private ySpeed;
+    private activePointer;
+    constructor(scene: Phaser.Scene, key: string, value: number, moveEnabled: boolean);
+    update(): void;
+    enableMove(): void;
+    disableMove(): void;
+    changeValues(value: number, color: string): void;
+    preDestroy(): void;
+    private setListeners();
+    private onDragStart(pointer, target);
+    private onDrag(pointer, target);
+    private onDragEnd(pointer, target);
+    private createText();
+    private updateText();
+    private killSphere();
+    private setValues();
+    private updatePosition();
+    number: number;
+}
